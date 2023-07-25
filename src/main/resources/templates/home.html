@@ -5,9 +5,91 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
+    <title>Xavier Francis | Home</title>
+    <style>
+        html {
+            background-color: grey;
+
+        }
+        nav {
+            display: flex;
+            padding: 0 25px;
+            margin: 10px;
+        }
+
+        #navRight {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 0 30%;
+            align-items: center;
+        }
+        #navLeft {
+            font-size: xxx-large;
+            display: flex;
+            align-items: center;
+        }
+        #navRight a{
+            font-size: large;
+            text-decoration: none;
+            color: black;
+            border-top: orange 2px solid;
+            border-bottom: orange 2px solid;
+            border-left: grey 2px solid;
+            border-right: grey 2px solid;
+            padding: 5px;
+        }
+
+        #navRight a:hover {
+            background-color: grey;
+            color: white;
+        }
+
+        #top1, #top3 {
+            font-size: x-large;
+        }
+
+        #top2 {
+            font-size: xxx-large;
+        }
+        header {
+            background-color: white;
+            height: 500px;
+        }
+        #navIcons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #navIcons i {
+            padding: 0 10px;
+        }
+
+
+
+    </style>
 </head>
 <body>
-<h1>Home Page</h1>
+    <nav>
+        <div id="navLeft">
+            <span id="top1">J</span>
+            <span id="top2">X</span>
+            <span id="top3">F</span>
+
+        </div>
+        <div id="navRight">
+            <a th:href="@{#}">About</a>
+            <a th:href="@{#}">My Work</a>
+            <a th:href="@{#}">Contact Me</a>
+        </div>
+        <div id="navIcons">
+            <i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i>
+            <i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i>
+        </div>
+    </nav>
+    <header>
+    </header>
+<div class="slider-thumb"></div>
 </body>
 </html>
