@@ -8,7 +8,25 @@
     <title></title>
 </head>
 <body>
-<nav></nav>
+<nav th:fragment="navbar">
+    <div id="navLeft">
+        <span id="top1">J</span>
+        <span id="top2">X</span>
+        <span id="top3">F</span>
+
+    </div>
+    <div id="navRight">
+        <a th:href="@{/}"><span>Home</span></a>
+        <a th:href="@{/about}"><span>About</span></a>
+        <a th:href="@{/projects}"><span>My Work</span></a>
+        <a th:href="@{/contact}"><span>Contact Me</span></a>
+    </div>
+    <div id="navIcons">
+        <a th:href="@{https://www.linkedin.com/in/j-xavier-francis/}" target="_blank"><i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i></a>
+        <a th:href="@{https://github.com/XavierFrancis9}" target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i></a>
+        <a th:href="@{/files/xavier_francis_resume.pdf}" target="popup" onclick="window.open('xavier_francis_resume.pdf','jbnWindow','width=600,height=400')"><i class="fa-regular fa-file fa-lg" style="color: #ffffff;"></i></a>
+    </div>
+</nav>
 
 </body>
 </html>

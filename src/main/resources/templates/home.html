@@ -6,64 +6,86 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
     <title>Xavier Francis | Home</title>
     <style>
         html {
-            background-color: grey;
-
+            background-color: black;
+            color: whitesmoke;
+            font-family: monospace;
         }
-        nav {
-            display: flex;
-            padding: 0 25px;
-            margin: 10px;
-        }
-
-        #navRight {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding: 0 30%;
-            align-items: center;
-        }
-        #navLeft {
-            font-size: xxx-large;
-            display: flex;
-            align-items: center;
-        }
-        #navRight a{
-            font-size: large;
-            text-decoration: none;
-            color: black;
-            border-top: orange 2px solid;
-            border-bottom: orange 2px solid;
-            border-left: grey 2px solid;
-            border-right: grey 2px solid;
-            padding: 5px;
-        }
-
-        #navRight a:hover {
-            background-color: grey;
-            color: white;
-        }
-
-        #top1, #top3 {
-            font-size: x-large;
-        }
-
-        #top2 {
-            font-size: xxx-large;
+        body {
+            margin: 0;
         }
         header {
-            background-color: white;
-            height: 500px;
-        }
-        #navIcons {
+            background-color: whitesmoke;
+            height: 100vh;
+            width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: space-around;
         }
-        #navIcons i {
-            padding: 0 10px;
+        #projects {
+            height: 100vh;
+        }
+        img {
+            border-radius: 50%;
+            height: 500px;
+            width: 500px;
+            border: 5px black solid;
+            transform: skew(-33deg);
+        }
+        #headerleft {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            padding: 100px 10%;
+            text-align: center;
+            background-color: black;
+            transform: skew(33deg);
+
+        }
+        #headerRight {
+            width: 70%;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            /*justify-content: center;*/
+            align-content: center;
+            text-align: center;
+            padding: 25px;
+            padding-top: 10%;
+        }
+        h1 {
+            font-size: 60px;
+            margin: 10px;
+        }
+        #paragraph {
+            margin-top: 10px;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+        button {
+            margin-top: 50px;
+
+        }
+        #contact {
+            height: 100vh;
+            background-color: white;
+            width: 100%;
+            overflow: hidden;
+        }
+        #bottomLeft {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            padding: 100px 10%;
+            text-align: center;
+            background-color: black;
+            transform: skew(-33deg);
+            height: 100%;
         }
 
 
@@ -71,25 +93,23 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div id="navLeft">
-            <span id="top1">J</span>
-            <span id="top2">X</span>
-            <span id="top3">F</span>
-
-        </div>
-        <div id="navRight">
-            <a th:href="@{#}">About</a>
-            <a th:href="@{#}">My Work</a>
-            <a th:href="@{#}">Contact Me</a>
-        </div>
-        <div id="navIcons">
-            <i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i>
-            <i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i>
-        </div>
-    </nav>
+    <nav th:replace="partials/navbar.html :: navbar"></nav>
     <header>
+        <div id="headerleft">
+            <div>
+                <img th:src="@{/img/xavier_photo.jpg}">
+            </div>
+        </div>
+        <div id="headerRight">
+            <h1 style="color: grey">Hi, I'm Xavier</h1>
+            <h1>Software Developer</h1>
+            <div id="paragraph">Highly motivated Marine Corps Veteran and passionate Full-Stack Software Development Professional skilled in working with cross-functional teams, delivering high-quality solutions under pressure, leadership experience, and proficiency in multiple programming languages and frameworks. Dedicated to driving results, fostering strong relationships, keeping up with emerging technologies and best practices, and having a strong passion to learn.</div>
+            <a th:href="@{/about}"><button>Learn More</button></a>
+        </div>
     </header>
-<div class="slider-thumb"></div>
+    <div id="projects"></div>
+    <div id="contact">
+        <div id="bottomLeft"></div>
+    </div>
 </body>
 </html>

@@ -23,7 +23,7 @@ public class HomeController {
     }
 
     // view contact me page
-    @GetMapping("/contact-me")
+    @GetMapping("/contact")
     public String contact() {
         return "contact";
     }
