@@ -23,14 +23,11 @@
             width: 100%;
             display: flex;
         }
-        #projects {
-            height: 100vh;
-        }
-        img {
+        #photo {
             border-radius: 50%;
             height: 500px;
             width: 500px;
-            border: 5px black solid;
+            border: 5px white solid;
             transform: skew(-33deg);
         }
         #headerleft {
@@ -67,7 +64,19 @@
         }
         button {
             margin-top: 50px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px white solid;
+            box-shadow: black 4px 4px 8px;
+            background-color: grey;
+            color: white;
 
+        }
+        button:hover {
+            background-color: #cc8500;
+            box-shadow: none;
+            color: black;
+            border: 2px black solid;
         }
         #contact {
             height: 100vh;
@@ -84,8 +93,47 @@
             padding: 100px 10%;
             text-align: center;
             background-color: black;
-            transform: skew(-33deg);
+            transform: skew(-25deg);
             height: 100%;
+        }
+        #techStack {
+            color: black;
+            text-align: center;
+            width: 100%;
+            transform: skew(-28deg);
+        }
+        #projects {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+
+        }
+        .logo {
+            height: 125px;
+            width: 125px;
+            padding: 15px;
+            margin: 50px 50px;
+            transform: skew(-28deg);
+
+        }
+        .logo2 {
+            height: 125px;
+            width: 125px;
+            padding: 15px;
+            margin: 50px 8%;
+            transform: skew(-28deg);
+        }
+        #stackContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            transform: skew(28deg);
+            background-color: whitesmoke;
+            width: 85%;
+            margin: 25px;
+
         }
 
 
@@ -97,7 +145,7 @@
     <header>
         <div id="headerleft">
             <div>
-                <img th:src="@{/img/xavier_photo.jpg}">
+                <img id="photo" th:src="@{/img/xavier_photo.jpg}">
             </div>
         </div>
         <div id="headerRight">
@@ -107,7 +155,19 @@
             <a th:href="@{/about}"><button>Learn More</button></a>
         </div>
     </header>
-    <div id="projects"></div>
+    <div id="projects">
+        <div id="stackContainer">
+            <h1 id="techStack">Technologies</h1>
+            <img class="logo" th:src="@{/img/icons8-html-125.png}">
+            <img class="logo" th:src="@{/img/icons8-css-125.png}">
+            <img class="logo" th:src="@{/img/icons8-javascript-125.png}">
+            <img class="logo" th:src="@{/img/icons8-bootstrap-125.png}">
+            <img class="logo2" th:src="@{/img/icons8-java-125.png}">
+            <img class="logo2" th:src="@{/img/icons8-spring-boot-125.png}">
+            <img class="logo2" th:src="@{/img/icons8-thymeleaf-125.png}">
+            <img class="logo2" th:src="@{/img/icons8-c-125.png}">
+        </div>
+    </div>
     <div id="contact">
         <div id="bottomLeft"></div>
     </div>

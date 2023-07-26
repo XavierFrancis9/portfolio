@@ -27,8 +27,6 @@ nav {
     border-right: black 2px solid;
     padding: 5px 10px;
     margin: 0 25px;
-    /*width: 100px;*/
-    /*text-align: center;*/
 }
 
 
@@ -41,11 +39,11 @@ nav {
 }
 
 #top1, #top3 {
-    font-size: x-large;
+    font-size: 36px;
 }
 
 #top2 {
-    font-size: xxx-large;
+    font-size: 64px;
 }
 
 #navIcons {
