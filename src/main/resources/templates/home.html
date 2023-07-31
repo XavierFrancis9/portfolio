@@ -83,14 +83,14 @@
             background-color: white;
             width: 100%;
             overflow: hidden;
+            display: flex;
         }
         #bottomLeft {
             width: 30%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
             align-content: center;
-            padding: 100px 10%;
+            padding: 25px 10%;
             text-align: center;
             background-color: black;
             transform: skew(-25deg);
@@ -102,7 +102,7 @@
             width: 100%;
             transform: skew(-28deg);
         }
-        #projects {
+        #tech {
             padding: 25px;
             display: flex;
             flex-direction: column;
@@ -114,7 +114,7 @@
             height: 125px;
             width: 125px;
             padding: 15px;
-            margin: 50px 50px;
+            margin: 50px 6%;
             transform: skew(-28deg);
 
         }
@@ -122,7 +122,7 @@
             height: 125px;
             width: 125px;
             padding: 15px;
-            margin: 50px 8%;
+            margin: 50px 6%;
             transform: skew(-28deg);
         }
         #stackContainer {
@@ -134,6 +134,52 @@
             width: 85%;
             margin: 25px;
 
+        }
+        #projects {
+            transform: skew(25deg);
+            contain: content;
+        }
+        .projectImg {
+            transform: skew(25deg);
+            height: 180px;
+            width: 360px;
+            border-radius: 25px;
+            position: relative;
+            filter: blur(0); /* Initially, no blur */
+            transition: filter 0.3s ease; /* Add a smooth transition */
+        }
+
+        .projectContainer {
+            margin: 25px;
+        }
+        footer {
+            padding: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+        #bottomRight {
+            width: 70%;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            padding: 50px;
+            padding-top: 10%;
+        }
+        .overlay {
+            position: relative;
+             bottom: 125px;
+            transform: skew(25deg);
+            visibility: hidden;
+            color: #cc8500;
+            text-shadow:
+                    -1px -1px 0 #fff,
+                    1px -1px 0 #fff,
+                    -1px 1px 0 #fff,
+                    1px 1px 0 #fff;
         }
 
 
@@ -155,7 +201,7 @@
             <a th:href="@{/about}"><button>Learn More</button></a>
         </div>
     </header>
-    <div id="projects">
+    <div id="tech">
         <div id="stackContainer">
             <h1 id="techStack">Technologies</h1>
             <img class="logo" th:src="@{/img/icons8-html-125.png}">
@@ -164,12 +210,86 @@
             <img class="logo" th:src="@{/img/icons8-bootstrap-125.png}">
             <img class="logo2" th:src="@{/img/icons8-java-125.png}">
             <img class="logo2" th:src="@{/img/icons8-spring-boot-125.png}">
-            <img class="logo2" th:src="@{/img/icons8-thymeleaf-125.png}">
             <img class="logo2" th:src="@{/img/icons8-c-125.png}">
+            <img class="logo2" th:src="@{/img/icons8-mysql-125.png}">
         </div>
     </div>
     <div id="contact">
-        <div id="bottomLeft"></div>
+        <div id="bottomLeft">
+            <h1 id="projects">Projects</h1>
+            <div class="projectContainer">
+                <a th:href="@{/projects}"><img id = "1" class="projectImg" th:src="@{/img/brewquest.png}"></a>
+                <h2 class="overlay">See More</h2>
+            </div>
+            <div class="projectContainer">
+                <a th:href="@{/projects}"><img class="projectImg" th:src="@{/img/adcentral.png}"></a>
+                <h2 class="overlay">See More</h2>
+            </div>
+            <div class="projectContainer">
+                <a th:href="@{/projects}"><img class="projectImg" th:src="@{/img/weathersmart.png}"></a>
+                <h2 class="overlay">See More</h2>
+            </div>
+        </div>
+        <div id="bottomRight">
+            <h1 style="color: black;">“Coding is today’s language of creativity. All our children deserve a chance to become creators instead consumers of computer science.”</h1>
+            <h2>-Maria Klawe</h2>
+        </div>
     </div>
+    <footer>
+        <div id="footerleft">
+            <h3>james.x.francis9@gmail.com</h3>
+        </div>
+        <div id="navLeft" style="padding-right: 100px">
+            <span id="top1">J</span>
+            <span id="top2">X</span>
+            <span id="top3">F</span>
+
+        </div>
+        <div id="navIcons" class="footerRight">
+            <a th:href="@{https://www.linkedin.com/in/j-xavier-francis/}" target="_blank"><i class="fa-brands fa-linkedin fa-lg" style="color: #ffffff;"></i></a>
+            <a th:href="@{https://github.com/XavierFrancis9}" target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i></a>
+            <a th:href="@{/files/xavier_francis_resume.pdf}" target="_blank"><i class="fa-regular fa-file fa-lg" style="color: #ffffff;"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageElements = document.getElementsByClassName("projectImg");
+            const imageArray = Array.from(imageElements); // Convert the HTMLCollection to an array
+
+            const buttons = document.getElementsByClassName("overlay");
+            const buttonArray = Array.from(buttons); // Convert the HTMLCollection to an array
+
+
+            imageArray[0].addEventListener("mouseover", (event) => {
+                event.target.style.filter = "blur(5px)";
+                buttons[0].style.visibility = "visible";
+            });
+
+            imageArray[0].addEventListener("mouseout", (event) => {
+                event.target.style.filter = "blur(0px)";
+                buttons[0].style.visibility = "hidden";
+            });
+
+            imageArray[1].addEventListener("mouseover", (event) => {
+                event.target.style.filter = "blur(5px)";
+                buttons[1].style.visibility = "visible";
+            });
+
+            imageArray[1].addEventListener("mouseout", (event) => {
+                event.target.style.filter = "blur(0px)";
+                buttons[1].style.visibility = "hidden";
+            });
+
+            imageArray[2].addEventListener("mouseover", (event) => {
+                event.target.style.filter = "blur(5px)";
+                buttons[2].style.visibility = "visible";
+            });
+
+            imageArray[2].addEventListener("mouseout", (event) => {
+                event.target.style.filter = "blur(0px)";
+                buttons[2].style.visibility = "hidden";
+            });
+        });
+    </script>
 </body>
 </html>
