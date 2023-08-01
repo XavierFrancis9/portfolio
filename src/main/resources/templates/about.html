@@ -7,10 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
-    <title></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <title>Xavier Francis | About</title>
+    <style>
+        main {
+            background-color: whitesmoke;
+            color: black;
+            height: 100vh;
+            padding-top: 90px;
+        }
+    </style>
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
-about page
+<main>
+    This is the main element
+</main>
+<th:block th:replace="home.html :: footer"></th:block>
 </body>
 </html>

@@ -2,13 +2,16 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 25px;
-    margin: 10px;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
 }
 
 #navRight {
     display: flex;
     justify-content: space-around;
-    padding: 0 20%;
+    padding: 0 15%;
     align-items: center;
 
 }
@@ -16,6 +19,7 @@ nav {
     font-size: xxx-large;
     display: flex;
     align-items: center;
+    color: whitesmoke;
 }
 #navRight a{
     font-size: large;
@@ -36,6 +40,7 @@ nav {
     border-bottom: black 2px solid;
     border-left: #cc8500 2px solid;
     border-right: #cc8500 2px solid;
+    cursor: pointer;
 }
 
 #top1, #top3 {
@@ -50,9 +55,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-right: 50px;
 }
 #navIcons i {
     padding: 0 10px;
+}
+#navIcons i:hover {
+
 }
 html {
     background-color: black;
