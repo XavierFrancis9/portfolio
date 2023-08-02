@@ -7,6 +7,11 @@ nav {
     width: 100%;
     z-index: 1;
 }
+html {
+    background-color: black;
+    color: whitesmoke;
+    font-family: monospace;
+}
 
 #navRight {
     display: flex;

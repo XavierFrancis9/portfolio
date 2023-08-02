@@ -7,10 +7,108 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
-    <title></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <title>Xavier Francis | Projects</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        #section1 {
+            background-color: whitesmoke;
+            transform: skew(-20deg);
+            width: 75%;
+            height: 100%;
+
+        }
+
+        #project1 {
+            background-color: whitesmoke;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            padding-top: 74px;
+            transform: skew(20deg);
+            width: 80%;
+            margin: 25px 0;
+            margin-left: 172px;
+
+        }
+
+        #project2 {
+            background-color: whitesmoke;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            padding-top: 74px;
+            transform: skew(-20deg);
+            width: 80%;
+            margin: 25px 0;
+            margin-left: 175px;
+        }
+
+        #project3 {
+            background-color: whitesmoke;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            padding-top: 74px;
+            transform: skew(20deg);
+            width: 80%;
+            margin: 25px 0;
+            margin-left: 175px;
+            margin-bottom: 0;
+        }
+
+        .images {
+            height: 300px;
+            width: 600px;
+        }
+
+
+    </style>
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
-projects
+<main>
+    <div id="project1">
+        <section id="section1">
+            <div class="projectName">
+                <h1>BrewQuest</h1>
+            </div>
+            <div class="projectImgContainer">
+                <img class="images" th:src="@{/img/brewquest.png}">
+            </div>
+            <div class="projectDescription">
+                <p>BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
+            </div>
+            <div class="projectTech">
+                <img class="icon" th:src="@{/img/icons8-html-125.png}">
+                <img class="icon" th:src="@{/img/icons8-css-125.png}">
+                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
+                <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
+                <img class="icon" th:src="@{/img/icons8-java-125.png}">
+            </div>
+        </section>
+    </div>
+    <div id="project2"></div>
+    <div id="project3"></div>
+</main>
+<th:block th:replace="home.html :: footer"></th:block>
 </body>
 </html>
