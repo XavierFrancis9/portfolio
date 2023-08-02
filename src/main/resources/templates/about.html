@@ -10,18 +10,133 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
     <title>Xavier Francis | About</title>
     <style>
+        html {
+
+        }
         main {
             background-color: whitesmoke;
             color: black;
+            overflow: hidden;
+        }
+        .inner {
+            background-color: whitesmoke;
+        }
+        #aboutleft1,#aboutleft3{
+            width: 50%;
+            transform: skew(-15deg);
+            background-color: black;
             height: 100vh;
-            padding-top: 90px;
+            margin-left: -25px;
+        }
+        #aboutRight2 {
+            width: 50%;
+            transform: skew(15deg);
+            background-color: black;
+            height: 100vh;
+        }
+        #aboutRight1 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .aboutContainer {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+        .inner {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .photo {
+            transform: skew(15deg);
+            border-radius: 50%;
+            height: 500px;
+            width: 500px;
+            border: 5px white solid;
+
+        }
+        .photoReverse {
+            transform: skew(-15deg);
+            border-radius: 50%;
+            height: 500px;
+            width: 500px;
+            border: 5px white solid;
+            max-width: 100%;
+            background-image: url("/img/devils-tower.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        .aboutContainer:nth-child(2) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .paragraph {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            padding: 0 10%;
+        }
+        .inner img {
+            margin: 25px 0;
+        }
+        #marinePhoto {
+            transform: skew(15deg);
+            border-radius: 50%;
+            height: 500px;
+            width: 500px;
+            border: 5px white solid;
+            background-image: url("/img/marines.jpg");
+            background-position: center;
+            background-size: cover;
         }
     </style>
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
 <main>
-    This is the main element
+    <div class="aboutContainer">
+        <div class="inner" id="aboutleft1">
+            <img class="photo" th:src="@{/img/xavier_photo.jpg}">
+        </div>
+        <div class="inner" id="aboutRight1">
+
+            <h1>Software Developer</h1>
+            <img th:src="@{/img/code.png}">
+            <div class="paragraph">As a full stack software developer, I am a versatile and innovative problem solver with a passion for creating cutting-edge applications. With expertise in both front-end and back-end technologies, I thrive in designing seamless user interfaces and robust server-side systems. Leveraging my strong command over programming languages such as JavaScript, SQL, and Java, I craft dynamic programs with sleek designs. Collaborative by nature, I am committed to delivering efficient, scalable, and user-centric software, ensuring a seamless digital experience for users across the globe.</div>
+        </div>
+    </div>
+
+    <div class="aboutContainer">
+        <div class="inner" id="aboutleft2">
+
+            <h1>Outdoor Enthusiast</h1>
+            <img th:src="@{/img/mountain.png}">
+            <div class="paragraph">I am constantly drawn to the allure of nature's wonders. Whether it's hiking through rugged mountains, camping under a starlit sky, or exploring hidden trails, I cherish every opportunity to embrace the great outdoors. With each adventure, I discover a deeper connection to the world around me and a profound appreciation for the beauty of the wilderness. From adrenaline-fueled activities to moments of quiet reflection, I am on a never-ending quest to experience the sheer joy and serenity that nature generously offers. My heart belongs to the wild, and I eagerly embrace the thrill of each new exploration.</div>
+        </div>
+        <div class="inner" id="aboutRight2">
+            <div class="photoReverse"></div>
+        </div>
+    </div>
+
+    <div class="aboutContainer">
+        <div class="inner" id="aboutleft3">
+            <div id="marinePhoto"></div>
+        </div>
+        <div class="inner" id="aboutRight3">
+
+            <h1>Marine Veteran</h1>
+            <img th:src="@{/img/marine-logo.png}">
+            <div class="paragraph">I proudly carry with me the experiences, values, and camaraderie forged during my service. Throughout my time in the Corps, I learned the true meaning of discipline, dedication, and sacrifice. From rigorous training to deployments in challenging environments, I faced adversity with unwavering resilience and adaptability. My service instilled in me a profound sense of duty and a commitment to upholding honor, courage, and commitment in all aspects of life. Now, as a civilian, I continue to embody the core principles of the Marine Corps, using my skills and experiences to contribute positively to society and support fellow veterans.</div>
+        </div>
+    </div>
 </main>
 <th:block th:replace="home.html :: footer"></th:block>
 </body>

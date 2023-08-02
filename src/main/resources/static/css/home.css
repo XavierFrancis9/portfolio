@@ -36,11 +36,10 @@ header {
     color: black;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
+    justify-content: space-evenly;
     align-content: center;
     text-align: center;
     padding: 25px;
-    padding-top: calc(10% + 74px);
 }
 h1 {
     font-size: 60px;
@@ -152,6 +151,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
+    background-color: black;
 }
 #bottomRight {
     width: 70%;
@@ -178,4 +178,16 @@ footer {
             1px -1px 0 #fff,
             -1px 1px 0 #fff,
             1px 1px 0 #fff;
+}
+.pics {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.pics:nth-child(1), .pics:nth-child(3) {
+    justify-content: end;
+}
+#headerRight h2 {
+    font-size: 48px;
+    margin: 10px;
 }
