@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/img/code.png">
     <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
     <title>Xavier Francis | Projects</title>
@@ -26,7 +27,7 @@
             align-content: center;
         }
 
-        #section1, #section2, #section3 {
+        .section1{
             background-color: whitesmoke;
             transform: skew(20deg);
             width: 95%;
@@ -35,11 +36,8 @@
             flex-direction: row-reverse;
             justify-content: space-between;
         }
-        #section2 {
-            transform: skew(-20deg);
-        }
 
-        #section1 *, #section2 *, #section3 * {
+        .section1 *, #section2 *, #section3 * {
             transform: skew(-20deg);
             font-family: monospace;
             text-align: center;
@@ -51,8 +49,7 @@
         }
 
         #project1 {
-            background-color: black;
-            border: 15px whitesmoke solid;
+            background-color: whitesmoke;
             height: calc(100vh - 74px);
             display: flex;
             flex-direction: column;
@@ -61,7 +58,7 @@
             color: black;
             padding-top: 74px;
             transform: skew(20deg);
-            width: calc(80% - 30px);
+            width: 80%;
             margin: 25px 0;
             margin-left: 172px;
             overflow: hidden;
@@ -69,15 +66,13 @@
         }
 
         #project2 {
-            background-color: black;
-            border: 15px whitesmoke solid;
+            background-color: whitesmoke;
             height: calc(100vh - 74px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: black;
-            padding-top: 74px;
             transform: skew(-20deg);
             width: 80%;
             margin: 25px 0;
@@ -93,7 +88,6 @@
             justify-content: center;
             align-items: center;
             color: black;
-            padding-top: 74px;
             transform: skew(20deg);
             width: 80%;
             margin: 25px 0;
@@ -125,14 +119,25 @@
             flex-direction: column;
             justify-content: space-around;
             align-content: center;
+            padding-left:25px ;
+        }
+        #project2 .projectTech {
+            padding-left: 0px;
+            padding-right: 25px;
         }
         .icon {
             width: 100px;
             height: 100px;
         }
         .projectImgContainer {
-            width: 98%;
+            width: 100%;
             height: 425px;
+            overflow: hidden;
+        }
+        .repo {
+            transform: skew(0deg);
+        }
+        #project2 .sectionMiddle {
         }
 
 
@@ -142,13 +147,13 @@
 <nav th:replace="partials/navbar.html :: navbar"></nav>
 <main>
     <div id="project1">
-        <section id="section1">
+        <section class="section1">
             <div class="projectTech">
-                <img class="icon" th:src="@{/img/icons8-html-125.png}">
-                <img class="icon" th:src="@{/img/icons8-css-125.png}">
-                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
-                <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
                 <img class="icon" th:src="@{/img/icons8-java-125.png}">
+                <img class="icon" th:src="@{/img/icons8-spring-boot-125.png}">
+                <img class="icon" th:src="@{/img/icons8-thymeleaf-125.png}">
+                <img class="icon" th:src="@{/img/icons8-mysql-125.png}">
+                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
             </div>
             <div class="sectionMiddle">
                 <div class="projectImgContainer" style="background-color: black; transform: skew(0deg)">
@@ -157,50 +162,53 @@
                 <div class="projectDescription">
                     <p style="transform: skew(0deg)">BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
                 </div>
-                <div class="repo">
-                    <button>Live Site</button>
-                    <button>Repository</button>
+                <div class="repo" style="transform: skew(0deg);">
+                    <a th:href="@{https://brewquest.net/}" target="_blank"><button>Live Site</button></a>
+                    <a th:href="@{https://github.com/BrewQuest/BrewQuest}" target="_blank"><button>Repository</button></a>
                 </div>
             </div>
         </section>
     </div>
     <div id="project2">
-        <section id="section2">
-            <div class="projectName">
-                <h1>BrewQuest</h1>
-            </div>
-            <div class="projectImgContainer">
-                <img class="images" th:src="@{/img/brewquest.png}">
-            </div>
-            <div class="projectDescription">
-                <p>BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
+        <section class="section1">
+            <div class="sectionMiddle">
+                <div class="projectImgContainer" style="background-color: black; transform: skew(0deg)">
+                    <img class="images" th:src="@{/img/adcentral.png}" style="transform: skew(20deg)">
+                </div>
+                <div class="projectDescription"  style="transform: skew(20deg)">
+                    <p style="transform: skew(0deg)">A simplified version of Craigslist that allows users to post and browse advertisements. The project provides a functional and user-friendly platform for posting and browsing advertisements, while also providing me with experience in web development, database management, and software testing.</p>
+                </div>
+                <div class="repo" style="transform: skew(0deg);">
+                    <a th:href="@{https://github.com/francis-perez-olson-adlister/jax-adlister}" target="_blank"><button style="transform: skew(20deg)">Repository</button></a>
+                </div>
             </div>
             <div class="projectTech">
-                <img class="icon" th:src="@{/img/icons8-html-125.png}">
-                <img class="icon" th:src="@{/img/icons8-css-125.png}">
-                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
-                <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
-                <img class="icon" th:src="@{/img/icons8-java-125.png}">
+                <img class="icon" style="transform: skew(20deg)" th:src="@{/img/icons8-java-125.png}">
+                <img class="icon" style="transform: skew(20deg)" th:src="@{/img/icons8-mysql-125.png}">
+                <img class="icon" style="transform: skew(20deg)" th:src="@{/img/icons8-javascript-125.png}">
+                <img class="icon" style="transform: skew(20deg)" th:src="@{/img/icons8-bootstrap-125.png}">
+                <img class="icon" style="transform: skew(20deg)" th:src="@{/img/icons8-css-125.png}">
             </div>
         </section>
     </div>
     <div id="project3">
-        <section id="section3">
-            <div class="projectName">
-                <h1>BrewQuest</h1>
-            </div>
-            <div class="projectImgContainer">
-                <img class="images" th:src="@{/img/brewquest.png}">
-            </div>
-            <div class="projectDescription">
-                <p>BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
-            </div>
+        <section class="section1">
             <div class="projectTech">
                 <img class="icon" th:src="@{/img/icons8-html-125.png}">
                 <img class="icon" th:src="@{/img/icons8-css-125.png}">
                 <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
                 <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
-                <img class="icon" th:src="@{/img/icons8-java-125.png}">
+            </div>
+            <div class="sectionMiddle">
+                <div class="projectImgContainer" style="background-color: black; transform: skew(0deg)">
+                    <img class="images" th:src="@{/img/weathersmart.png}">
+                </div>
+                <div class="projectDescription">
+                    <p style="transform: skew(0deg)">A weather application that gives the forecast for locations around the world. The application is designed with a clean and intuitive interface that allows users to quickly and easily access the information they need. The application makes use of the latest weather data to provide daily forecasts for a variety of metrics, including temperature, precipitation, wind speed, and humidity.</p>
+                </div>
+                <div class="repo" style="transform: skew(0deg);">
+                    <a th:href="@{https://github.com/XavierFrancis9/codeup-web-exercises/blob/main/weather_map.html}" target="_blank"><button>Repository</button></a>
+                </div>
             </div>
         </section>
     </div>

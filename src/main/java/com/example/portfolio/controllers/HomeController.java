@@ -27,6 +27,12 @@ public class HomeController {
     public String contact() {
         return "contact";
     }
+
+    // view thank you page
+    @GetMapping("/thankyou")
+    public String thankyou() {
+        return "thankyou";
+    }
 }
 
 

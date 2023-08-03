@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d33e65fc6a.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/img/code.png">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <title>Xavier Francis | Thank You!</title>
+    <style>
+        #message {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            overflow: hidden;
+        }
+        #messageInner {
+            background-color: whitesmoke;
+            color: black;
+            width: 50%;
+            transform: skew(20deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #messageInner * {
+            transform: skew(-20deg);
+        }
+    </style>
+</head>
+<body>
+<nav th:replace="partials/navbar.html :: navbar"></nav>
+    <div id="message">
+        <div id="messageInner">
+            <h1>Thank You!</h1>
+            <p>I'll be sure to get back with you ASAP!</p>
+            </div>
+    </div>
+</body>
+<th:block th:replace="home.html :: footer"></th:block>
+</html>
