@@ -26,6 +26,18 @@ html {
     align-items: center;
     color: whitesmoke;
 }
+.navLeft {
+    font-size: xxx-large;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    text-underline: none;
+}
+
 #navRight a{
     font-size: large;
     text-decoration: none;

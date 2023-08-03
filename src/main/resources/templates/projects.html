@@ -14,23 +14,46 @@
             margin: 0;
             padding: 0;
         }
+        #navRight a:nth-child(3) {
+            border-left: 2px #cc8500 solid;
+            border-right: 2px #cc8500 solid;
+            border-top: 2px black solid;
+            border-bottom: 2px black solid;
+        }
         main {
             display: flex;
             flex-direction: column;
             align-content: center;
         }
 
-        #section1 {
+        #section1, #section2, #section3 {
             background-color: whitesmoke;
-            transform: skew(-20deg);
-            width: 75%;
+            transform: skew(20deg);
+            width: 95%;
             height: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        #section2 {
+            transform: skew(-20deg);
+        }
 
+        #section1 *, #section2 *, #section3 * {
+            transform: skew(-20deg);
+            font-family: monospace;
+            text-align: center;
+        }
+
+
+        #section2 * {
+            transform: skew(20deg);
         }
 
         #project1 {
-            background-color: whitesmoke;
-            height: 100vh;
+            background-color: black;
+            border: 15px whitesmoke solid;
+            height: calc(100vh - 74px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -38,15 +61,17 @@
             color: black;
             padding-top: 74px;
             transform: skew(20deg);
-            width: 80%;
+            width: calc(80% - 30px);
             margin: 25px 0;
             margin-left: 172px;
-
+            overflow: hidden;
+            margin-top: 0;
         }
 
         #project2 {
-            background-color: whitesmoke;
-            height: 100vh;
+            background-color: black;
+            border: 15px whitesmoke solid;
+            height: calc(100vh - 74px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -57,11 +82,12 @@
             width: 80%;
             margin: 25px 0;
             margin-left: 175px;
+            overflow: hidden;
         }
 
         #project3 {
             background-color: whitesmoke;
-            height: 100vh;
+            height: calc(100vh - 74px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -73,11 +99,40 @@
             margin: 25px 0;
             margin-left: 175px;
             margin-bottom: 0;
+            overflow: hidden;
         }
 
         .images {
-            height: 300px;
-            width: 600px;
+            height: 100%;
+            width: 85%;
+            margin: 0;
+        }
+        .projectDescription {
+            font-family: monospace;
+            font-size: x-large;
+            padding: 25px;
+        }
+        .projectName {
+            padding-bottom: 50px;
+        }
+        .sectionMiddle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .projectTech {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+        }
+        .projectImgContainer {
+            width: 98%;
+            height: 425px;
         }
 
 
@@ -88,6 +143,29 @@
 <main>
     <div id="project1">
         <section id="section1">
+            <div class="projectTech">
+                <img class="icon" th:src="@{/img/icons8-html-125.png}">
+                <img class="icon" th:src="@{/img/icons8-css-125.png}">
+                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
+                <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
+                <img class="icon" th:src="@{/img/icons8-java-125.png}">
+            </div>
+            <div class="sectionMiddle">
+                <div class="projectImgContainer" style="background-color: black; transform: skew(0deg)">
+                    <img class="images" th:src="@{/img/brewquest.png}">
+                </div>
+                <div class="projectDescription">
+                    <p style="transform: skew(0deg)">BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
+                </div>
+                <div class="repo">
+                    <button>Live Site</button>
+                    <button>Repository</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="project2">
+        <section id="section2">
             <div class="projectName">
                 <h1>BrewQuest</h1>
             </div>
@@ -106,8 +184,26 @@
             </div>
         </section>
     </div>
-    <div id="project2"></div>
-    <div id="project3"></div>
+    <div id="project3">
+        <section id="section3">
+            <div class="projectName">
+                <h1>BrewQuest</h1>
+            </div>
+            <div class="projectImgContainer">
+                <img class="images" th:src="@{/img/brewquest.png}">
+            </div>
+            <div class="projectDescription">
+                <p>BrewQuest is an immersive and feature-rich full-stack web application developed using an impressive stack of technologies. BrewQuest utilizes the Open Brewery, and Mapbox API to empower users to explore a vast array of breweries, share their valuable reviews, participate as drivers, and earn badges for their brewery visits and insightful reviews. This engaging platform seamlessly combines the love for breweries with a rewarding experience for its users.</p>
+            </div>
+            <div class="projectTech">
+                <img class="icon" th:src="@{/img/icons8-html-125.png}">
+                <img class="icon" th:src="@{/img/icons8-css-125.png}">
+                <img class="icon" th:src="@{/img/icons8-javascript-125.png}">
+                <img class="icon" th:src="@{/img/icons8-bootstrap-125.png}">
+                <img class="icon" th:src="@{/img/icons8-java-125.png}">
+            </div>
+        </section>
+    </div>
 </main>
 <th:block th:replace="home.html :: footer"></th:block>
 </body>

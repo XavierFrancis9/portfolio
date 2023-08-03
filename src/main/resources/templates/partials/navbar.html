@@ -9,12 +9,13 @@
 </head>
 <body>
 <nav th:fragment="navbar">
+    <a class="navLeft" th:href="@{/}">
     <div id="navLeft">
-        <span id="top1">J</span>
-        <span id="top2">X</span>
-        <span id="top3">F</span>
-
+        <span id="top1" class="topLogo">J</span>
+        <span id="top2" class="topLogo">X</span>
+        <span id="top3" class="topLogo">F</span>
     </div>
+    </a>
     <div id="navRight">
         <a th:href="@{/}"><span>Home</span></a>
         <a th:href="@{/about}"><span>About</span></a>

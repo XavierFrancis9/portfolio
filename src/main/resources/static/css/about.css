@@ -1,6 +1,12 @@
 html {
 
 }
+#navRight a:nth-child(2) {
+    border-left: 2px #cc8500 solid;
+    border-right: 2px #cc8500 solid;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
 main {
     background-color: whitesmoke;
     color: black;
