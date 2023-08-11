@@ -70,6 +70,8 @@
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
+<th:block th:replace="index.html :: banner"></th:block>
+
 <main>
     <form th:action="@{https://formsubmit.co/0516f37948351a22cfa9bcc7d7e5da65}" th:method="POST">
         <h1>Contact Me</h1>

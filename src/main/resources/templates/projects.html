@@ -56,7 +56,6 @@
             justify-content: center;
             align-items: center;
             color: black;
-            padding-top: 74px;
             transform: skew(20deg);
             width: 80%;
             margin: 25px 0;
@@ -145,6 +144,7 @@
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
+<th:block th:replace="index.html :: banner"></th:block>
 <main>
     <div id="project1">
         <section class="section1">
